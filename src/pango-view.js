@@ -116,7 +116,7 @@ class PangoView {
     try {
       return await fs.readFile(this.options.output);
     } catch (error) {
-      throw new Error(`Failed to read output file: ${error.message}`);
+      throw new Error(`Failed to read output file: ${error.message}`, { cause: error });
     }
   }
 
@@ -182,6 +182,7 @@ class PangoView {
         throw new Error(
           `pango-view not found at "${this.options.pangoViewPath}". ` +
           `Please ensure Pango is installed and pango-view is in your PATH.`,
+          { cause: error },
         );
       }
       throw new Error(
@@ -189,6 +190,7 @@ class PangoView {
         `Command: ${error.command}\n` +
         `Exit code: ${error.exitCode}\n` +
         `Stderr: ${error.stderr ?? 'N/A'}`,
+        { cause: error },
       );
     }
   }
