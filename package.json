@@ -1,0 +1,41 @@
+{
+  "name": "node-pango",
+  "version": "1.0.0",
+  "description": "High-fidelity Node.js wrapper for pango-view CLI with HTML support and font-by-path rendering",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "types": "types/index.d.ts",
+  "scripts": {
+    "test": "node test/test.js",
+    "example": "node examples/basic-usage.js"
+  },
+  "keywords": [
+    "pango",
+    "pango-view",
+    "text-rendering",
+    "cairo",
+    "font",
+    "svg",
+    "png",
+    "pdf",
+    "markup"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "execa": "^8.0.1",
+    "htmlparser2": "^9.1.0",
+    "domhandler": "^5.0.3"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  }
+}
